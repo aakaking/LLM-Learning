@@ -1,0 +1,15 @@
+langchain-nvidia-ai-endpoints
+langchain_core
+langchain
+matplotlib
+numpy
+jupyterlab
+faiss-cpu==1.7.2
+openai
+gradio
+openai-whisper==20231117
+ffmpeg==1.4
+ffmpeg -y
+edge-tts
+transformers
+openai
