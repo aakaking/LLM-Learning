@@ -1,10 +1,14 @@
 # 基于 NIM 建构多模态 AI-Agent 
 ## 项目概述：
-基于NIM构建多模态AI-Agent，适合初学者和小白，了解工作原理，快速搭建多模态智能体实现特定工作。
+基于NIM构建多模态AI-Agent，适合初学者和小白，了解工作原理，快速搭建多模态智能体实现特定工作。本项目示例为从图表中读取信息，修改信息，重新绘制图片，工作流程为：接收图片 -> 分析数据 -> 修改数据 -> 生成绘制图片的代码 -> 执行代码 -> 展示结果，在这个示例的基础上可以根据业务需求定义更复杂的流程，也可以多智能体结合。
 ## 技术方案：
-- 模型选择：为快速搭建项目，选择调用NIM的api，提供多种模型，根据需求选择。
-- AI-Agent：。
-## 实施步骤：
+- 多模态模型基于 NIM 的调用方式
+
+申请NIM的API Key，来调用NIM的计算资源
+进入https://build.nvidia.com/microsoft/phi-3-vision-128k-instruct, 点击Get API Key按钮，生成一个秘钥
+ ![Alt](img/nv-key.png)
+- 基于 llama3-70b-instruct和Phi-3-Vision 的AI-Agent实践
+- 基于 Gradio 框架建立前端互动界面
 ### 1.环境搭建：
 主要需要三个工具包:
 * `langchain_nvidia_ai_endpoint`: 用来调用nvidia nim的计算资源
@@ -13,9 +17,8 @@
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ### 2.代码实现：
 - 图片解析
-    - 图片编解码
+    - 图片编码
     - Microsoft Phi 3 vison解析图片
-    - 存储向量数据
 - AI-Agent
     - 应用场景：将图片中的统计图表转换为可以用 python 进行分析的数据
     - Agent 工作流：
@@ -24,10 +27,6 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
         - 生成能够绘制图片的代码,并执行代码
         - 根据处理后的数据绘制图表
 - 封装进gradio
-### 3.测试与调优
-
-### 4.集成与部署
-使用gradio实现了ui，直接运行部署。
 ## 结果展示：
 - 用场景展示： 数据分析
 - 功能演示：
